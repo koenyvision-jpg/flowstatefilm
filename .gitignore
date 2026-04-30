@@ -1,0 +1,9 @@
+# Local Netlify folder
+.netlify
+
+# Large video files (serve from YouTube/Vimeo instead)
+*.mov
+*.mp4
+
+# macOS
+.DS_Store
