@@ -1042,6 +1042,24 @@ a {
 }
 .project-description p + p { margin-top: 20px; }
 
+.project-credits {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  max-width: 560px;
+}
+.project-credits .section-label { margin-bottom: 20px; }
+.credit-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  font-size: 12px;
+  line-height: 2;
+  font-weight: 300;
+}
+.credit-role { color: rgba(255,255,255,0.3); }
+.credit-names { color: var(--fg-dim); }
+
 /* Campaign videos */
 .campaign-section {
   border-bottom: 1px solid var(--border);
