@@ -506,7 +506,8 @@ a {
 .spec-photo-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.62) 100%);
+  background: linear-gradient(to right, rgba(8,8,8,0.82) 0%, rgba(8,8,8,0.48) 50%, rgba(8,8,8,0.12) 100%),
+              linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.45) 100%);
   z-index: 1;
 }
 
@@ -524,6 +525,7 @@ a {
   letter-spacing: 0.22em;
   color: rgba(255,255,255,0.25);
   margin-bottom: 36px;
+  transition: color 0.4s ease;
 }
 
 .spec-title {
@@ -540,6 +542,7 @@ a {
   line-height: 1.85;
   font-weight: 300;
   max-width: 240px;
+  transition: color 0.4s ease;
 }
 
 .spec-desc-extra {
@@ -552,10 +555,12 @@ a {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.5s ease 0.1s, opacity 0.4s ease 0.15s;
+  transition: max-height 0.5s ease 0.1s, opacity 0.4s ease 0.15s, color 0.4s ease;
 }
 
-.spec-item.hovered .spec-desc-extra { max-height: 120px; opacity: 1; }
+.spec-item.hovered .spec-num { color: rgba(255,255,255,0.55); }
+.spec-item.hovered .spec-desc { color: var(--fg); }
+.spec-item.hovered .spec-desc-extra { max-height: 120px; opacity: 1; color: var(--fg); }
 
 
 /* ══════════════════════════════════════════
