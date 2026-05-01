@@ -112,6 +112,30 @@
     });
   });
 
+  /* ─── Contact modal ─────────────────────────────────────── */
+  const contactModal = document.getElementById('contactModal');
+  if (contactModal) {
+    const openModal = () => {
+      contactModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeModal = () => {
+      contactModal.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll('.nav-cta, .contact-trigger').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    contactModal.querySelector('.contact-modal-backdrop').addEventListener('click', closeModal);
+    contactModal.querySelector('.contact-modal-close').addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  }
+
   /* ─── Work page filter ───────────────────────────────────── */
   const filterBtns  = document.querySelectorAll('.filter-btn');
   const workTiles   = document.querySelectorAll('.work-tile[data-cat]');

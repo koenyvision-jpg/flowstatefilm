@@ -1280,3 +1280,82 @@ a {
   .photo-collage { columns: 2; }
   .photo-collage-header { padding: 32px 24px; }
 }
+
+/* ── Contact modal ─────────────────────────────────────────── */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.contact-modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.contact-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.contact-modal-card {
+  position: relative;
+  z-index: 1;
+  background: #111;
+  border: 1px solid var(--border);
+  padding: 56px 64px 52px;
+  width: min(480px, calc(100vw - 48px));
+}
+.contact-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--fg-dim);
+  cursor: pointer;
+  padding: 6px;
+  line-height: 0;
+  transition: color 0.2s;
+}
+.contact-modal-close:hover { color: var(--fg); }
+.contact-modal-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--fg-dim);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.contact-modal-headline {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.5vw, 56px);
+  line-height: 0.88;
+  color: var(--fg);
+  margin-bottom: 44px;
+  letter-spacing: -0.01em;
+}
+.contact-modal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+}
+.contact-modal-links a {
+  font-size: 14px;
+  color: var(--fg-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+.contact-modal-links a:hover { color: var(--fg); }
+
+@media (max-width: 480px) {
+  .contact-modal-card { padding: 44px 28px 40px; }
+}
